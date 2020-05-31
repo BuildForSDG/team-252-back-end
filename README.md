@@ -50,6 +50,15 @@ You should have **Python 3.5+** and **git** installed.
     pip install pipenv
     ``
 
+    To install Pillow, run the command
+    ``
+    python -m pip install Pillow
+    ``
+    To install Pytorch and TorchVision, you will need to have Anaconda installed. Run
+    ``
+    conda install pytorch torchvision cpuonly -c pytorch
+    ``
+
     After that you will need to restart the shell to make it operational.
 
     &nbsp;
