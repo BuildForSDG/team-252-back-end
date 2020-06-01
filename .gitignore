@@ -1,6 +1,7 @@
 # ignoring the model file since it is too large
 *.pt
 *.env
+.vscode*
 
 ### Django ###
 *.log

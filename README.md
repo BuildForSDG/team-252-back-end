@@ -50,6 +50,23 @@ You should have **Python 3.5+** and **git** installed.
     pip install pipenv
     ``
 
+    To install Pillow, run the command
+    ``
+    python -m pip install Pillow
+    ``
+    To install Pytorch and TorchVision, you will need to have Anaconda installed. Run
+    ``
+    conda install pytorch torchvision cpuonly -c pytorch
+    ``
+    If the above does not work, navigate to your user account
+    ``
+      <user>\.virtualenvs\<your env>\Script\activate
+    ``
+    to activate your virtual environment and run
+    ``
+      pip install torch===1.5.0 torchvision===0.6.0 -f https://download.pytorch.org/whl/torch_stable.html
+    ``
+
     After that you will need to restart the shell to make it operational.
 
     &nbsp;
@@ -79,6 +96,8 @@ You should have **Python 3.5+** and **git** installed.
     python manage.py makemigrations
     python manage.py migrate
   ``
+
+- The model file is quite huge, so I will be sharing it on the slack channel. Find a link to my gdrive. Copy the file and add it to the **class_models** folder inside **API**
 - Run your project:
   Navigate to the folder containing manage.py and run
   `python manage.py runserver`
