@@ -7,7 +7,27 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
-            }
+            },
+            {
+                test: /.*\.(gif|png|jp(e*)g|svg)$/i,
+                use: [
+                    {
+                        loader: "url-loader",
+                        options: {
+                            limit: 21000,
+                            name: "images/[name]_[hash:7].[ext]"
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.css$/,
+                include: /node_modules/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ],
+            },
         ]
     }
 }
