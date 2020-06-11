@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-import { GET_PREDICTIONS, DELETE_PREDICTION, ADD_PREDICTION } from './types';
+import { createMessage } from './messages';
+import { GET_PREDICTIONS, DELETE_PREDICTION, ADD_PREDICTION, GET_ERRORS } from './types';
 
 // Get Predictions
 export const getPredictions = () => dispatch => {
@@ -17,6 +18,7 @@ export const getPredictions = () => dispatch => {
 export const deletePrediction = (id) => dispatch => {
   axios.delete(`/api/predict/${id}/`)
     .then(res => {
+      dispatch(createMessage({ deletePrediction: "Prediction File Deleted!!" }))
       dispatch({
         type: DELETE_PREDICTION,
         payload: id
@@ -28,9 +30,19 @@ export const deletePrediction = (id) => dispatch => {
 export const addPrediction = (prediction) => dispatch => {
   axios.post('/api/predict/', prediction)
     .then(res => {
+      dispatch(createMessage({ addPrediction: "The Prediction has been generated!!" }))
       dispatch({
         type: ADD_PREDICTION,
         payload: res.data
       });
-    }).catch(err => console.log(err))
+    }).catch(err => {
+      const errors = {
+        msg: err.response.data,
+        status: err.response.status
+      }
+      dispatch({
+        type: GET_ERRORS,
+        payload: errors
+      });
+    });
 };

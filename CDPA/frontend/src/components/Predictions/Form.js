@@ -23,14 +23,16 @@ class Form extends Component {
     formData.append(
       'image',
       image,
-      image.name
     );
     this.props.addPrediction(formData)
+    this.setState({
+      image: null
+    })
   }
   render() {
     return (
       <div>
-        <input style={{ display: 'none' }} type='file' onChange={this.fileChangedHandler} ref={fileInput => this.fileInput = fileInput} />
+        <input style={{ display: 'none' }} type='file' onChange={this.fileChangedHandler} ref={fileInput => this.fileInput = fileInput} required />
         <button onClick={() => this.fileInput.click()}>Pick File</button>
         <button onClick={this.uploadHandler}>Upload</button>
       </div>
