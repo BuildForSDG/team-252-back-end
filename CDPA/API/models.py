@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.contrib.auth import get_user_model
 
 import os
 import json
@@ -7,11 +8,16 @@ import torch
 from torchvision import transforms, models as md
 from PIL import Image
 
+User = get_user_model()
+
 # Create your models here.
 class PredImages(models.Model):
     image = models.ImageField(upload_to="Pred_Images")
     prediction = models.CharField(max_length=100, blank=True, null=True)
     uploaded_on = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(
+        User, related_name="predictions", on_delete=models.CASCADE, null=True
+    )
 
     def save(self, *args, **kwargs):
         self.prediction = self.classify(self.image)

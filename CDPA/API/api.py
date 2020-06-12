@@ -5,7 +5,11 @@ from API.serializers import PredImagesSerializer
 
 # PredImages ViewSet
 class PredImagesViewSet(viewsets.ModelViewSet):
-    queryset = PredImages.objects.all()
-    permission_classes = [permissions.AllowAny]
-
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = PredImagesSerializer
+
+    def get_queryset(self):
+        return self.request.user.predictions.all()
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
