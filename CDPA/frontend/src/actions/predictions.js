@@ -1,11 +1,12 @@
 import axios from 'axios';
 
+import { tokenConfig } from './auth';
 import { createMessage, returnErrors } from './messages';
 import { GET_PREDICTIONS, DELETE_PREDICTION, ADD_PREDICTION } from './types';
 
 // Get Predictions
-export const getPredictions = () => dispatch => {
-  axios.get('/api/predict/')
+export const getPredictions = () => (dispatch, getState) => {
+  axios.get('/api/predict/', tokenConfig(getState))
     .then(res => {
       dispatch({
         type: GET_PREDICTIONS,
@@ -17,8 +18,8 @@ export const getPredictions = () => dispatch => {
 };
 
 // Delete Prediction
-export const deletePrediction = (id) => dispatch => {
-  axios.delete(`/api/predict/${id}/`)
+export const deletePrediction = (id) => (dispatch, getState) => {
+  axios.delete(`/api/predict/${id}/`, tokenConfig(getState))
     .then(res => {
       dispatch(createMessage({ deletePrediction: "Prediction File Deleted!!" }))
       dispatch({
@@ -29,8 +30,8 @@ export const deletePrediction = (id) => dispatch => {
 };
 
 // Add Prediction
-export const addPrediction = (prediction) => dispatch => {
-  axios.post('/api/predict/', prediction)
+export const addPrediction = (prediction) => (dispatch, getState) => {
+  axios.post('/api/predict/', prediction, tokenConfig(getState))
     .then(res => {
       dispatch(createMessage({ addPrediction: "The Prediction has been generated!!" }))
       dispatch({
