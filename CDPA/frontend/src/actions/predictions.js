@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import { createMessage } from './messages';
-import { GET_PREDICTIONS, DELETE_PREDICTION, ADD_PREDICTION, GET_ERRORS } from './types';
+import { createMessage, returnErrors } from './messages';
+import { GET_PREDICTIONS, DELETE_PREDICTION, ADD_PREDICTION } from './types';
 
 // Get Predictions
 export const getPredictions = () => dispatch => {
@@ -11,7 +11,9 @@ export const getPredictions = () => dispatch => {
         type: GET_PREDICTIONS,
         payload: res.data
       });
-    }).catch(err => console.log(err))
+    }).catch(err => dispatch(returnErrors
+      (err.response.data, err.response.status)
+    ))
 };
 
 // Delete Prediction
@@ -35,14 +37,7 @@ export const addPrediction = (prediction) => dispatch => {
         type: ADD_PREDICTION,
         payload: res.data
       });
-    }).catch(err => {
-      const errors = {
-        msg: err.response.data,
-        status: err.response.status
-      }
-      dispatch({
-        type: GET_ERRORS,
-        payload: errors
-      });
-    });
+    }).catch(err => dispatch(returnErrors
+      (err.response.data, err.response.status)
+    ));
 };

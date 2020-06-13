@@ -13,6 +13,7 @@ djangorestframework = "*"
 python-decouple = "*"
 pytest-django = "*"
 psycopg2 = "*"
+django-rest-knox = "*"
 
 [requires]
 python_version = "3.8"
