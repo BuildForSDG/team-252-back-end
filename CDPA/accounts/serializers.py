@@ -13,43 +13,15 @@ class UserSerializer(serializers.ModelSerializer):
 
 # Register Serializer
 class RegisterSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(label="Email Address")
-    email2 = serializers.EmailField(label="Confirm Email")
+  class Meta:
+    model = User
+    fields = ('id', 'username', 'email', 'password')
+    extra_kwargs = {'password': {'write_only': True}}
 
-    class Meta:
-        model = User
-        fields = ("id", "username", "email", "email2", "password")
-        extra_kwargs = {"password": {"write_only": True}}
+  def create(self, validated_data):
+    user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
 
-    def validate_email(self, value):
-        data = self.get_initial()
-        email1 = data.get("email2")
-        email2 = value
-        if email1 != email2:
-            raise serializers.ValidationError("Emails must match")
-        user_qs = User.objects.filter(email=email2)
-        if user_qs.exists():
-            raise serializers.ValidationError(
-                "A user with this email is already registered"
-            )
-        return value
-
-    def validate_email2(self, value):
-        data = self.get_initial()
-        email1 = data.get("email")
-        email2 = value
-        if email1 != email2:
-            raise serializers.ValidationError("Emails must match")
-        return value
-
-    def create(self, validated_data):
-        user = User.objects.create_user(
-            validated_data["username"],
-            validated_data["email"],
-            validated_data["password"],
-        )
-        return user
-
+    return user
 
 # Login Serializer
 class LoginSerializer(serializers.ModelSerializer):
