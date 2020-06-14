@@ -28,7 +28,7 @@ How would someone use what you have built, include URLs to the deployed app, ser
 
 
 ## Setup
-You should have **Python 3.5+** and **git** installed. 
+You should have **Python 3.5+**, **git**, and **node** installed. 
 
 1. Clone the repo you've created from the template herein and change into the directory
 
@@ -50,47 +50,39 @@ You should have **Python 3.5+** and **git** installed.
     pip install pipenv
     ``
 
-    To install Pillow, run the command
-    ``
-    python -m pip install Pillow
-    ``
-    To install Pytorch and TorchVision, you will need to have Anaconda installed. Run
-    ``
-    conda install pytorch torchvision cpuonly -c pytorch
-    ``
-    If the above does not work, navigate to your user account
-    ``
-      <user>\.virtualenvs\<your env>\Script\activate
-    ``
-    to activate your virtual environment and run
-    ``
-      pip install torch===1.5.0 torchvision===0.6.0 -f https://download.pytorch.org/whl/torch_stable.html
-    ``
-
-    After that you will need to restart the shell to make it operational.
-
-    &nbsp;
-
-    To check that it is correctly installed, you can check the version:
-    ``
-    pipenv --version
-    ``
-
-4. With poetry installed, you should install project dependecies by running:
+4. Create a new virtual environment.
 
     ``
-    pipenv install
+    pipenv shell
     ``
 
-    This will install pytest all the depedencies required for the project to run
+5. On a separate terminal window, while in the root directory run
+
+    ``
+    npm install
+    ``
+
+6. To install Pytorch and TorchVision, you will need to have Anaconda installed. Run
+    ``
+    pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+    ``
+
+## Running the project.
+1. On the node terminal, while in the root directory run
+    ``
+    npm run dev
+    ``
+
+2. On the python terminal, cd into the CDPA directory where the manage.py file is located and run
+    ``
+    python manage.py runserver
+    ``
+
+3. Copy the url in the python terminal and view the project on your browser
 
 #### Hints
 
 - Run tests using the command: `pytest`
-- Install dependencies: 
-  `pipenv install <dependency>`
-- Install dev dependencies:
-  `pipenv install --dev <dev-dependency>`
 - To recreate the database, Ensure you are in the folder with the **manage.py** file and run
   ``
     python manage.py makemigrations
