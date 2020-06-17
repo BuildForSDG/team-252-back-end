@@ -12,9 +12,9 @@ import store from '../store';
 import Login from './accounts/Login';
 import Register from './accounts/Register';
 import Header from './layout/Header';
-import Dashboard from './Predictions/Dashboard';
 import Alerts from './layout/Alerts';
 import PrivateRoute from './common/PrivateRoute';
+import Home from '../views/Home';
 
 import { loadUser } from '../actions/auth';
 
@@ -22,7 +22,7 @@ import { loadUser } from '../actions/auth';
 const alertOptions = {
   timeout: 3000,
   position: 'top center'
-}
+};
 
 class App extends Component {
   componentDidMount() {
@@ -38,7 +38,7 @@ class App extends Component {
               <Alerts />
               <div className="container">
                 <Switch>
-                  <PrivateRoute exact path='/' component={Dashboard} />
+                  <PrivateRoute exact path='/' component={Home} />
                   <Route exact path='/register' component={Register} />
                   <Route exact path='/login' component={Login} />
                 </Switch>
@@ -47,7 +47,7 @@ class App extends Component {
           </Router>
         </AlertProvider>
       </Provider>
-    )
+    );
   }
 }
 

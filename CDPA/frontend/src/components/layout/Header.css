@@ -1,0 +1,29 @@
+#apppage .gradient {
+    /* background: -moz-linear-gradient(
+      45deg,
+      rgba(42, 27, 161, 0.7),
+      rgba(29, 210, 177, 0.7) 100%
+    );
+    background: -webkit-linear-gradient(
+      45deg,
+      rgba(42, 27, 161, 0.7),
+      rgba(29, 210, 177, 0.7) 100%
+    );
+    background: -webkit-gradient(
+      linear,
+      45deg,
+      from(rgba(42, 27, 161, 0.7)),
+      to(rgba(29, 210, 177, 0.7))
+    );
+    background: -o-linear-gradient(
+      45deg,
+      rgba(42, 27, 161, 0.7),
+      rgba(29, 210, 177, 0.7) 100%
+    );
+    background: linear-gradient(
+      45deg,
+      rgba(42, 27, 161, 0.7),
+      rgba(29, 210, 177, 0.7) 100%
+    ); */
+    background: url("https://images.pexels.com/photos/96715/pexels-photo-96715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  }
