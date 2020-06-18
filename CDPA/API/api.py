@@ -7,6 +7,7 @@ from API.serializers import PredImagesSerializer
 class PredImagesViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = PredImagesSerializer
+    ordering = ["-uploaded_on"]
 
     def get_queryset(self):
         return self.request.user.predictions.all()

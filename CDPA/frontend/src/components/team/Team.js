@@ -16,7 +16,7 @@ const Team = () => {
           <MDBCol md="4" className="mb-md-0 mb-5">
             <img
               tag="img"
-              src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
+              src="/static/images/benah.jpg"
               className="rounded z-depth-1-half img-fluid"
               alt="Benah"
             />
@@ -24,26 +24,28 @@ const Team = () => {
               Bernard Ngaruiya
               </h4>
             <h6 className="text-uppercase grey-text mb-3">Machine Learning Engineer</h6>
-            <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-fb">
+            <MDBBtn tag="a" href="https://www.facebook.com/bngaruiya/" target='blank' floating size="sm" className="mx-1 mb-0 btn-fb">
               <MDBIcon fab icon="facebook-f" />
             </MDBBtn>
             <MDBBtn
               tag="a"
+              href="https://github.com/bngaruiya"
+              target="blank"
               floating
               size="sm"
-              className="mx-1 mb-0 btn-dribbble"
+              className="mx-1 mb-0 btn-git"
             >
-              <MDBIcon fab icon="dribbble" />
+              <MDBIcon fab icon="github" />
             </MDBBtn>
-            <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-tw">
-              <MDBIcon fab icon="twitter" />
+            <MDBBtn tag="a" href="https://www.linkedin.com/in/bngaruiya/" target='blank' floating size="sm" className="mx-1 mb-0 btn-li">
+              <MDBIcon fab icon="linkedin-in" />
             </MDBBtn>
           </MDBCol>
 
           <MDBCol md="4" className="mb-md-0 mb-5">
             <img
               tag="img"
-              src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg"
+              src="/static/images/gor.jpg"
               className="rounded z-depth-1-half img-fluid"
               alt="Gor"
             />
@@ -53,16 +55,18 @@ const Team = () => {
               </h6>
             <MDBBtn
               tag="a"
+              href='https://www.facebook.com/gor.clifford'
+              target='blank'
               floating
               size="sm"
-              className="mx-1 mb-0 btn-email"
+              className="mx-1 mb-0 btn-fb"
             >
-              <MDBIcon icon="envelope" />
+              <MDBIcon icon="facebook-f" />
             </MDBBtn>
-            <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-fb">
+            {/* <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-fb">
               <MDBIcon fab icon="facebook-f" />
-            </MDBBtn>
-            <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-git">
+            </MDBBtn> */}
+            <MDBBtn tag="a" href='https://github.com/cliffgor' target='blank' floating size="sm" className="mx-1 mb-0 btn-git">
               <MDBIcon fab icon="github" />
             </MDBBtn>
           </MDBCol>
@@ -70,7 +74,7 @@ const Team = () => {
           <MDBCol md="4" className="mb-md-0 mb-5">
             <img
               tag="img"
-              src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+              src="/static/images/saringe.jpg"
               className="rounded z-depth-1-half img-fluid"
               alt="Saringe"
             />
@@ -78,7 +82,7 @@ const Team = () => {
               Cliff Saringe
               </h4>
             <h6 className="text-uppercase grey-text mb-3">Web Developer</h6>
-            <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-li">
+            {/* <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-li">
               <MDBIcon fab icon="linkedin-in" />
             </MDBBtn>
             <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-tw">
@@ -86,7 +90,7 @@ const Team = () => {
             </MDBBtn>
             <MDBBtn tag="a" floating size="sm" className="mx-1 mb-0 btn-pin">
               <MDBIcon fab icon="pinterest" />
-            </MDBBtn>
+            </MDBBtn> */}
           </MDBCol>
         </MDBRow>
       </MDBCardBody>

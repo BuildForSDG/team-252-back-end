@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
@@ -21,7 +21,7 @@ import { loadUser } from '../actions/auth';
 // Alert Options
 const alertOptions = {
   timeout: 3000,
-  position: 'top center'
+  position: 'middle'
 };
 
 class App extends Component {

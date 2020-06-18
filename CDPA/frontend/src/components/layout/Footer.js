@@ -15,23 +15,13 @@ const Footer = () => {
           <div className="text-center text-md-right">
             <ul className="list-unstyled list-inline">
               <li className="list-inline-item">
-                <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                <a href='https://github.com/BuildForSDG/team-252-back-end' target='blank' className="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i className="fab fa-github" />
+                </a>
+              </li>
+              <li className="list-inline-item">
+                <a href='https://www.facebook.com/groups/249164319589395' target="blank" className="btn-floating btn-sm rgba-white-slight mx-1">
                   <i className="fab fa-facebook-f" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                  <i className="fab fa-twitter" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                  <i className="fab fa-google-plus" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                  <i className="fab fa-linkedin-in" />
                 </a>
               </li>
             </ul>

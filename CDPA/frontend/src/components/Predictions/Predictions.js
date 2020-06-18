@@ -2,8 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getPredictions, deletePrediction } from '../../actions/predictions';
-import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBMask, MDBIcon, MDBView, MDBBtn } from "mdbreact";
-import predictions from '../../reducers/predictions';
+import { MDBRow, MDBCol, MDBMask, MDBView, MDBBtn } from "mdbreact";
 
 class Predictions extends Component {
   static propTypes = {
@@ -23,15 +22,6 @@ class Predictions extends Component {
         <br />
         <h2>Recent User Uploads</h2>
         <br />
-        {/* {this.props.predictions.map(prediction => (
-          <div key={prediction.id} className="card" style={{ width: '50rem' }}>
-            <img src={prediction.image} className="card-img-top" alt="..." />
-            <div className="card-body">
-              <p className="card-text">The photo indicates your crop might have a {prediction.prediction} infection</p>
-              <button onClick={this.props.deletePrediction.bind(this, prediction.id)} className="btn btn-danger btn-sm">Delete</button>
-            </div>
-          </div>
-        ))} */}
         <MDBRow>
           {this.props.predictions.map(prediction => (
             <MDBCol key={prediction.id} lg="4" md="12" className="mb-lg-0 mb-4">

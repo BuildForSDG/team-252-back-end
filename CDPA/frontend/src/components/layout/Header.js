@@ -26,7 +26,7 @@ import {
 } from 'mdbreact';
 import './Header.css';
 
-class Header extends React.Component {
+class Header extends Component {
   state = {
     collapsed: false
   };
