@@ -1,0 +1,7 @@
+#apppage .gradient {
+    background: url("/static/images/intro.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; 
+  }
