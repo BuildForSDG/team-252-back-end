@@ -24,7 +24,7 @@ class Predictions extends Component {
         <br />
         <MDBRow>
           {this.props.predictions.map(prediction => (
-            <MDBCol key={prediction.id} lg="4" md="12" className="mb-lg-0 mb-4">
+            < MDBCol key={prediction.id} lg="4" md="12" className="mb-lg-0 mb-4" >
               <MDBView hover className="rounded z-depth-2 mb-4" waves>
                 <img
                   className="img-fluid"
@@ -42,7 +42,7 @@ class Predictions extends Component {
             </MDBCol>
           ))}
         </MDBRow>
-      </Fragment>
+      </Fragment >
     );
   }
 }

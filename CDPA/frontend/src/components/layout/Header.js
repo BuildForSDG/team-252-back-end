@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Scroll from 'react-scroll';
+
 import Form from '../Predictions/Form';
 import { logout } from '../../actions/auth';
 import {
@@ -25,6 +27,8 @@ import {
   MDBDropdownToggle
 } from 'mdbreact';
 import './Header.css';
+
+const ScrollLink = Scroll.ScrollLink;
 
 class Header extends Component {
   state = {
